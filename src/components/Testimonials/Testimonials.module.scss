@@ -1,0 +1,129 @@
+@import '../../variables.scss';
+
+.testimonials {
+  display: flex;
+  gap: 1rem;
+  padding: 0 2rem;
+
+  @include for-phone {
+    flex-direction: column;
+  }
+
+  .leftT {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    gap: 2rem;
+    color: white;
+    text-transform: uppercase;
+
+    & > :nth-child(1) {
+      color: $orange;
+      font-weight: bold;
+    }
+
+    & > :nth-child(2),
+    & > :nth-child(3) {
+      font-weight: bold;
+      font-size: 3rem;
+
+      @include for-desctop {
+        font-size: 2rem;
+      }
+
+      @include for-phone {
+        font-size: xx-large;
+      }
+    }
+
+    & > :nth-child(4) {
+      line-height: 40px;
+      letter-spacing: 2px;
+      text-align: justify;
+      text-transform: none;
+    }
+
+    & > span:nth-of-type(2) {
+      @include title-text;
+    }
+  }
+
+  .rightT {
+    position: relative;
+    flex: 1;
+
+    @include for-phone {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    & > img {
+      position: absolute;
+      top: 2rem;
+      right: 8rem;
+      width: 17rem;
+      height: 20rem;
+      object-fit: cover;
+
+      @include for-phone {
+        position: relative;
+        top: 0;
+        right: 0;
+        align-self: center;
+      }
+    }
+
+    & > :nth-child(1) {
+      position: absolute;
+      top: 0.9rem;
+      right: 9rem;
+      width: 17rem;
+      height: 20rem;
+      background-color: transparent;
+      border: 2px solid $orange;
+    }
+
+    & > :nth-child(2) {
+      position: absolute;
+      top: 4rem;
+      right: 7rem;
+      width: 17rem;
+      height: 19rem;
+      background: $planCard;
+    }
+
+    & > div {
+      @include for-phone {
+        position: relative;
+        display: none;
+      }
+    }
+
+    .arrows {
+      position: absolute;
+      bottom: 1rem;
+      left: 3rem;
+      display: flex;
+      gap: 1rem;
+
+      @include for-phone {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        display: block;
+      }
+
+      & > img {
+        width: 1.5rem;
+        cursor: pointer;
+
+        @include for-phone {
+          padding: 0 5px;
+        }
+      }
+    }
+  }
+}

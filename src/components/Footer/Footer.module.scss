@@ -1,0 +1,54 @@
+@import '../../variables.scss';
+
+.footerContainer {
+  position: relative;
+
+  & > hr {
+    border: 1px solid $lightgray;
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    align-items: center;
+    justify-content: center;
+    height: 20rem;
+    padding: 1rem 2rem;
+
+    & > .logoF > img {
+      width: 10rem;
+    }
+
+    & > .socialLinks {
+      display: flex;
+      gap: 4rem;
+
+      & > img {
+        width: 2rem;
+        height: 2rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .blurOne,
+  .blurTwo {
+    @include blur;
+
+    bottom: 0;
+    width: 26rem;
+    height: 12rem;
+    filter: blur(200px);
+  }
+
+  .blurOne {
+    right: 15%;
+    background: red;
+  }
+
+  .blurTwo {
+    left: 15%;
+    background: rgb(255 115 0);
+  }
+}

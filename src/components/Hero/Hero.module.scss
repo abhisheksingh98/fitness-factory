@@ -1,0 +1,272 @@
+@import '../../variables.scss';
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+
+  @include for-phone {
+    flex-direction: column;
+  }
+
+  .blur {
+    @include blur;
+
+    left: 0;
+    width: 22rem;
+    height: 30rem;
+
+    @include for-phone {
+      width: 14rem;
+    }
+  }
+
+  .leftH {
+    display: flex;
+    flex: 3;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+    padding-top: 1.5rem;
+
+    .theBestAd {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: start;
+      width: fit-content;
+      margin-top: 4rem;
+      padding: 20px 13px;
+      overflow: hidden;
+      color: white;
+      text-transform: uppercase;
+      background-color: $grayMedium;
+      border-radius: 4rem;
+
+      @include for-phone {
+        align-self: center;
+        margin-top: 0;
+        font-size: small;
+        transform: scale(0.8);
+      }
+
+      & > span {
+        z-index: 2;
+      }
+
+      & > div {
+        position: absolute;
+        left: 8px;
+        z-index: 1;
+        width: 5.4rem;
+        height: 80%;
+        background-color: $orange;
+        border-radius: 3rem;
+      }
+    }
+
+    .heroText {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      color: white;
+      font-weight: bold;
+      font-size: 4.5rem;
+      text-transform: uppercase;
+      text-overflow: inherit;
+
+      @include for-phone {
+        align-items: center;
+        justify-content: center;
+        font-size: xx-large;
+      }
+
+      & > div:first-child > span:first-child {
+        @include title-text;
+      }
+
+      & > div:nth-of-type(3) {
+        width: 80%;
+        font-weight: 200;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        text-transform: none;
+
+        @include for-phone {
+          font-weight: 200;
+          font-size: small;
+          letter-spacing: 1px;
+          text-align: center;
+        }
+      }
+    }
+
+    .figures {
+      display: flex;
+      gap: 2rem;
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+
+        & > span:nth-of-type(1) {
+          color: white;
+          font-size: 2rem;
+
+          @include for-phone {
+            font-size: large;
+          }
+        }
+
+        & > span:nth-of-type(2) {
+          color: $gray;
+          text-transform: uppercase;
+
+          @include for-phone {
+            font-size: small;
+          }
+        }
+      }
+    }
+
+    .heroButtons {
+      display: flex;
+      gap: 1rem;
+      font-weight: normal;
+
+      @include for-phone {
+        justify-content: center;
+      }
+    }
+  }
+
+  .rightH {
+    position: relative;
+    z-index: -1;
+    flex: 1;
+    background-color: $orange;
+
+    @include for-phone {
+      background: none;
+    }
+
+    & > button {
+      position: absolute;
+      top: 2rem;
+      right: 3rem;
+      color: black;
+    }
+
+    .heartRate {
+      position: absolute;
+      top: 7rem;
+      right: 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: start;
+      width: fit-content;
+      padding: 1rem;
+      background-color: $darkGrey;
+      border-radius: 5px;
+
+      @include for-phone {
+        top: 2rem;
+        left: 1rem;
+      }
+
+      & > img {
+        width: 2rem;
+      }
+
+      & > span:nth-child(2) {
+        color: $gray;
+      }
+
+      & > span:nth-child(3) {
+        color: white;
+        font-size: 1.5rem;
+      }
+    }
+
+    .heroImage {
+      position: absolute;
+      top: 10rem;
+      right: 8rem;
+      z-index: -1;
+      width: 23rem;
+
+      @include for-phone {
+        position: relative;
+        top: 4rem;
+        left: 7rem;
+        align-self: center;
+        width: 15rem;
+      }
+    }
+
+    .heroImageBack {
+      position: absolute;
+      top: 4rem;
+      right: 20rem;
+      z-index: -2;
+      width: 15rem;
+
+      @include for-phone {
+        top: 0;
+        left: 2rem;
+        width: 15rem;
+      }
+    }
+
+    .calories {
+      position: absolute;
+      top: 32rem;
+      right: 28rem;
+      display: flex;
+      gap: 2rem;
+      width: fit-content;
+      padding: 1rem;
+      background-color: $caloryCard;
+      border-radius: 5px;
+
+      @include for-desctop {
+        display: none;
+      }
+
+      @include for-phone {
+        position: relative;
+        top: 5rem;
+        left: 2rem;
+        display: flex;
+      }
+
+      & > img {
+        width: 3rem;
+
+        @include for-phone {
+          width: 2rem;
+        }
+      }
+
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        & > :nth-child(1) {
+          color: $gray;
+        }
+
+        & > :nth-child(2) {
+          color: white;
+          font-size: 1.5rem;
+
+          @include for-phone {
+            color: white;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

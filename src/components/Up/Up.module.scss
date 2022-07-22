@@ -1,0 +1,30 @@
+@import '../../variables.scss';
+
+.button,
+.button svg * {
+  transition: all 250ms;
+}
+
+.button {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  width: 40px;
+  height: 40px;
+  background-color: #808080;
+  background-image: linear-gradient(264deg, rgb(128 128 128) 2%, rgb(128 128 128) 20%, rgb(128 128 128) 4%, rgb(255 167 57) 87.75%);
+  background-position: right;
+  background-size: 200%;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 5%);
+  cursor: pointer;
+
+  &:hover {
+    background-position: left;
+  }
+
+  svg * {
+    fill: white;
+  }
+}

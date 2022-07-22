@@ -1,0 +1,122 @@
+@import '../../variables.scss';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+
+  & > :nth-child(2) {
+    @include for-phone {
+      position: fixed;
+      right: 2rem;
+      z-index: 99;
+    }
+  }
+
+  & > div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 40px;
+    background: $appColor;
+    border-radius: 5px;
+    cursor: pointer;
+
+    & > span {
+      position: relative;
+      display: inline-block;
+      width: 1.5rem;
+      height: 2px;
+      background: $gray;
+
+      &::before {
+        position: absolute;
+        top: -6px;
+        left: 0;
+        width: 1.5rem;
+        height: 2px;
+        background: $gray;
+        content: '';
+      }
+
+      &::after {
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 1.5rem;
+        height: 2px;
+        background: $gray;
+        content: '';
+      }
+    }
+
+    &:hover {
+      & > span,
+      & > span::before,
+      & > span::after {
+        background: $orange;
+      }
+    }
+
+    &.open span {
+      background-color: transparent;
+      transition: none;
+
+      &::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  .logo {
+    width: 10rem;
+    height: 3rem;
+  }
+
+  .headerMenu {
+    display: flex;
+    gap: 2rem;
+    color: white;
+    list-style: none;
+
+    &.open {
+      @include for-phone {
+        top: 4rem;
+        right: 2rem;
+        transform: translate(0);
+      }
+    }
+
+    @include for-phone {
+      position: fixed;
+      top: 4rem;
+      right: 2rem;
+      z-index: 3;
+      flex-direction: column;
+      padding: 2rem;
+      background-color: $appColor;
+      transform: translateX(150%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    & > li {
+      cursor: pointer;
+
+      &:hover {
+        color: $orange;
+      }
+
+      & > a {
+        display: block;
+        width: 100%;
+      }
+    }
+  }
+}

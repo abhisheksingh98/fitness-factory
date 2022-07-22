@@ -1,0 +1,35 @@
+$lightgray: #d9d9d9;
+$gray: #9c9c9c;
+$orange: #f48915;
+$darkGrey: #464d53;
+$caloryCard: #656565;
+$planCard: linear-gradient(210.41deg, #fa5042 1.14%, #ffa739 100.75%);
+$appColor: #3c3f45;
+$grayMedium: #363d42;
+
+@mixin title-text {
+  color: transparent;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
+}
+
+@mixin blur {
+  position: absolute;
+  z-index: -9;
+  background: rgb(253 120 43 / 69%);
+  border-radius: 50%;
+  filter: blur(150px);
+}
+
+@mixin for-phone-small {
+  @media (max-width: 425px) { @content; }
+}
+
+@mixin for-phone {
+  @media (max-width: 768px) { @content; }
+}
+
+@mixin for-desctop {
+  @media (max-width: 1220px) { @content; }
+}

@@ -1,0 +1,169 @@
+@import '../../variables.scss';
+
+.reasons {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+
+  @include for-phone {
+    flex-direction: column;
+  }
+
+  .leftR {
+    display: grid;
+    flex: 1 1;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    @include for-desctop {
+      grid-template-columns: repeat(3, max-content);
+      justify-content: right;
+    }
+
+    @include for-phone {
+      grid-auto-rows: auto;
+      grid-template-columns: repeat(3, max-content);
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    @include for-phone-small {
+      justify-content: start;
+    }
+
+    & > img {
+      object-fit: cover;
+    }
+
+    & > :nth-child(1) {
+      grid-row: 1/3;
+      width: 12rem;
+      height: 28.2rem;
+
+      @include for-desctop {
+        width: 10rem;
+        height: 24rem;
+      }
+
+      @include for-phone {
+        width: 7rem;
+        height: 17rem;
+      }
+    }
+
+    & > :nth-child(2) {
+      grid-column: 2/4;
+      width: auto;
+      height: 16rem;
+
+      @include for-desctop {
+        width: 18rem;
+        height: 14rem;
+      }
+
+      @include for-phone {
+        width: 15rem;
+        height: 10rem;
+      }
+    }
+
+    & > :nth-child(3) {
+      grid-row: 2;
+      grid-column: 2/3;
+      width: 14rem;
+
+      @include for-desctop {
+        width: 9rem;
+        height: 9rem;
+      }
+
+      @include for-phone {
+        width: 7rem;
+        height: 6rem;
+      }
+    }
+
+    & > :nth-child(4) {
+      grid-column: 3/4;
+      width: 10rem;
+      height: 11.2rem;
+
+      @include for-desctop {
+        width: 8rem;
+        height: 9rem;
+      }
+
+      @include for-phone {
+        width: 7rem;
+        height: 6rem;
+      }
+    }
+  }
+
+  .rightR {
+    display: flex;
+    flex: 1 1;
+    flex-direction: column;
+    gap: 1rem;
+    text-transform: uppercase;
+
+    & > span {
+      color: $orange;
+      font-weight: bold;
+
+      &:nth-of-type(2) {
+        color: $gray;
+        font-weight: normal;
+      }
+    }
+
+    & > div:not(.detailsR) {
+      color: white;
+      font-weight: bold;
+      font-size: 3rem;
+
+      @include for-desctop {
+        font-size: 2rem;
+      }
+
+      @include for-phone {
+        font-size: xx-large;
+        text-align: center;
+      }
+
+      & > :nth-child(1) {
+        @include title-text;
+      }
+    }
+
+    .detailsR {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+
+      & > div {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+
+        & > img {
+          width: 2rem;
+          height: 2rem;
+        }
+      }
+    }
+
+    .partners {
+      display: flex;
+      gap: 1rem;
+
+      & > img {
+        width: 2.5rem;
+      }
+    }
+  }
+}
